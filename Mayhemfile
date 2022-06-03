@@ -1,0 +1,5 @@
+project: die-engine
+target: diec
+
+cmds:
+  - cmd: /repo/build/release/diec @@
