@@ -29,7 +29,7 @@
 #include "xoptions.h"
 #include "xfileinfo.h"
 
-void ScanFiles(QList<QString> *pListArgs,DiE_Script::SCAN_OPTIONS *pScanOptions, DiE_Script *pDieScript)
+void ScanFiles(QList<QString> *pListArgs,DiE_Script::OPTIONS *pScanOptions,DiE_Script *pDieScript)
 {
     QList<QString> listFileNames;
 
@@ -57,7 +57,7 @@ void ScanFiles(QList<QString> *pListArgs,DiE_Script::SCAN_OPTIONS *pScanOptions,
 
         if(bShowFileName)
         {
-            printf("%s:\n",sFileName.toUtf8().data());
+            printf("%s:\n",QDir().toNativeSeparators(sFileName).toUtf8().data());
         }
 
         if(pScanOptions->bShowEntropy)
@@ -99,6 +99,10 @@ void ScanFiles(QList<QString> *pListArgs,DiE_Script::SCAN_OPTIONS *pScanOptions,
             {
                 options.sString=pScanOptions->sSpecial;
             }
+            else
+            {
+                options.sString="Info";
+            }
 
             XFileInfoModel model;
 
@@ -126,7 +130,7 @@ void ScanFiles(QList<QString> *pListArgs,DiE_Script::SCAN_OPTIONS *pScanOptions,
             }
 
             printf("%s",sResult.toUtf8().data());
-
+            printf("\n");
         }
         else
         {
@@ -163,18 +167,19 @@ void ScanFiles(QList<QString> *pListArgs,DiE_Script::SCAN_OPTIONS *pScanOptions,
             {
                 printf("%s",DiE_Script::getErrorsString(&scanResult).toUtf8().data());
             }
+            printf("\n");
         }
     }
 }
 
-int main(int argc, char *argv[])
+int main(int argc,char *argv[])
 {
     QCoreApplication::setOrganizationName(X_ORGANIZATIONNAME);
     QCoreApplication::setOrganizationDomain(X_ORGANIZATIONDOMAIN);
     QCoreApplication::setApplicationName(X_APPLICATIONNAME);
     QCoreApplication::setApplicationVersion(X_APPLICATIONVERSION);
 
-    QCoreApplication app(argc, argv);
+    QCoreApplication app(argc,argv);
 
     QCommandLineParser parser;
     QString sDescription;
@@ -188,20 +193,24 @@ int main(int argc, char *argv[])
 
     QCommandLineOption clRecursiveScan  (QStringList()<<    "r"<<   "recursivescan",    "Recursive scan."       );
     QCommandLineOption clDeepScan       (QStringList()<<    "d"<<   "deepscan",         "Deep scan."            );
+    QCommandLineOption clHeuristicScan  (QStringList()<<    "u"<<   "heuristicscan",    "Heuristic scan."       );
+    QCommandLineOption clVerbose        (QStringList()<<    "b"<<   "verbose",          "Verbose."              );
     QCommandLineOption clAllTypesScan   (QStringList()<<    "a"<<   "alltypes",         "Scan all types."       );
     QCommandLineOption clEntropy        (QStringList()<<    "e"<<   "entropy",          "Show entropy."         );
-    QCommandLineOption clInfo           (QStringList()<<    "i"<<   "info",             "Show file info."      );
+    QCommandLineOption clInfo           (QStringList()<<    "i"<<   "info",             "Show file info."       );
     QCommandLineOption clResultAsXml    (QStringList()<<    "x"<<   "xml",              "Result as XML."        );
     QCommandLineOption clResultAsJson   (QStringList()<<    "j"<<   "json",             "Result as JSON."       );
     QCommandLineOption clResultAsCSV    (QStringList()<<    "c"<<   "csv",              "Result as CSV."        );
     QCommandLineOption clResultAsTSV    (QStringList()<<    "t"<<   "tsv",              "Result as TSV."        );
     QCommandLineOption clDatabase       (QStringList()<<    "D"<<   "database",         "Set database<path>.",      "path");
     QCommandLineOption clShowDatabase   (QStringList()<<    "s"<<   "showdatabase",     "Show database."        );
-    QCommandLineOption clSpecial        (QStringList()<<    "S"<<   "special",          "Special file info for <method>. For example -S \"MD5\".",   "method");
+    QCommandLineOption clSpecial        (QStringList()<<    "S"<<   "special",          "Special file info for <method>. For example -S \"Hash\".",   "method");
     QCommandLineOption clShowMethods    (QStringList()<<    "m"<<   "showmethods",      "Show all special methods for the file.");
 
     parser.addOption(clRecursiveScan);
     parser.addOption(clDeepScan);
+    parser.addOption(clHeuristicScan);
+    parser.addOption(clVerbose);
     parser.addOption(clAllTypesScan);
     parser.addOption(clEntropy);
     parser.addOption(clInfo);
@@ -218,13 +227,15 @@ int main(int argc, char *argv[])
 
     QList<QString> listArgs=parser.positionalArguments();
 
-    DiE_Script::SCAN_OPTIONS scanOptions={0};
+    DiE_Script::OPTIONS scanOptions={0};
 
     scanOptions.bShowType=true;
     scanOptions.bShowOptions=true;
     scanOptions.bShowVersion=true;
     scanOptions.bRecursiveScan=parser.isSet(clRecursiveScan);
-    scanOptions.bDeepScan=parser.isSet(clDeepScan);
+    scanOptions.bIsDeepScan=parser.isSet(clDeepScan);
+    scanOptions.bIsHeuristicScan=parser.isSet(clHeuristicScan);
+    scanOptions.bIsVerbose=parser.isSet(clVerbose);
     scanOptions.bAllTypesScan=parser.isSet(clAllTypesScan);
     scanOptions.bShowEntropy=parser.isSet(clEntropy);
     scanOptions.bShowExtraInfo=parser.isSet(clInfo);
@@ -248,10 +259,16 @@ int main(int argc, char *argv[])
     QObject::connect(&die_script,SIGNAL(errorMessage(QString)),&consoleOutput,SLOT(errorMessage(QString)));
     QObject::connect(&die_script,SIGNAL(infoMessage(QString)),&consoleOutput,SLOT(infoMessage(QString)));
 
-    die_script.loadDatabase(sDatabase);
+    bool bIsDbUsed=false;
 
     if(parser.isSet(clShowDatabase))
     {
+        if(!bIsDbUsed)
+        {
+            die_script.loadDatabase(sDatabase);
+            bIsDbUsed=true;
+        }
+
         printf("Database: %s\n",sDatabase.toUtf8().data());
 
         QList<DiE_Script::SIGNATURE_STATE> list=die_script.getSignatureStates();
@@ -275,17 +292,23 @@ int main(int argc, char *argv[])
 
         printf("Methods:\n");
 
-        QList<QString> listMethods=XFileInfo::getMethodNames(fileType);
+        QList<XFileInfo::METHOD> listMethods=XFileInfo::getMethodNames(fileType);
 
         qint32 nNumberOfMethods=listMethods.count();
 
         for(qint32 i=0;i<nNumberOfMethods;i++)
         {
-            printf("\t%s\n",listMethods.at(i).toUtf8().data());
+            printf("\t%s\n",listMethods.at(i).sName.toUtf8().data());
         }
     }
     else if(listArgs.count())
     {
+        if(!bIsDbUsed)
+        {
+            die_script.loadDatabase(sDatabase);
+            bIsDbUsed=true;
+        }
+
         ScanFiles(&listArgs,&scanOptions,&die_script);
     }
     else if(!parser.isSet(clShowDatabase))

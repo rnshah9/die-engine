@@ -21,139 +21,51 @@
 #include "dialogabout.h"
 #include "ui_dialogabout.h"
 
-struct USERINFO
-{
-    QString sUser;
-    QString sImage;
-};
-
-USERINFO _userinfo_records[]=
-{
-    {QString("Nick Sm"),                QString("NickSM")},
-    {QString("hypn0"),                  QString("hypn0")},
-    {QString("ajax"),                   QString("ajax")},
-    {QString("==DJ==[ZLO]"),            QString("DrZlo")},
-    {QString("ADMIN-CRACK"),            QString("ADMINCRACK")},
-    {QString("mushr00m"),               QString("mushr00m")},
-    {QString("gurololicon"),            QString("gurololicon")},
-    {QString("Diabolic"),               QString("Diabolic")},
-    {QString("user_"),                  QString("user_")},
-    {QString("void"),                   QString("void")},
-    {QString("NikolayD"),               QString("NikolayD")},
-    {QString("4kusNick"),               QString("4kusNick")},
-    {QString("BoRoV"),                  QString("BoRoV")},
-    {QString("HandMill"),               QString("HandMill")},
-    {QString("ELF_7719116"),            QString("ELF_7719116")},
-    {QString("SReg"),                   QString("SReg")},
-    {QString("Zorn"),                   QString("Zorn")},
-    {QString("BAHEK"),                  QString("BAHEK")},
-    {QString("GPcH"),                   QString("GPcH")},
-    {QString("Airenikus"),              QString("Airenikus")},
-    {QString("crc1"),                   QString("crc1")},
-    {QString("DimitarSerg"),            QString("DimitarSerg")},
-    {QString("RedBlkJck"),              QString("RedBlkJck")},
-    {QString("JMPer"),                  QString("JMPer")},
-    {QString("exet0l"),                 QString("exet0l")},
-    {QString("Mick Grove"),             QString("MickGrove")},
-    {QString("Levis"),                  QString("Levis")},
-    {QString("sendersu"),               QString("sendersu")},
-    {QString("ekse0x"),                 QString("ekse0x")},
-    {QString("Slinger"),                QString("Slinger")},
-    {QString("DenCoder"),               QString("DenCoder")},
-    {QString("deniskore"),              QString("deniskore")},
-    {QString("Hellsp@wn"),              QString("hellspawn")},
-    {QString("Dazz"),                   QString("Dazz")},
-    {QString("A.S.L."),                 QString("ASL")},
-    {QString("DICI BF"),                QString("DICIBF")},
-    {QString("Javier Nieto"),           QString("JavierNieto")},
-    {QString("Jason Hood"),             QString("JasonHood")},
-    {QString("Tembo"),                  QString("Tembo")},
-    {QString("Bartosz Wójcik"),         QString("Bartosz")},
-    {QString("Jeffrey Wu"),             QString("JeffreyWu")},
-    {QString("Murcielago"),             QString("Murcielago")},
-    {QString("Eliseu Filipi"),          QString("EliseuFilipi")},
-    {QString("dartraiden"),             QString("dartraiden")},
-    {QString("Jupiter"),                QString("Jupiter")},
-    {QString("d3dm4u5"),                QString("d3dm4u5")},
-    {QString("Metabolic"),              QString("Metabolic")},
-    {QString("Adler"),                  QString("Adler")},
-    {QString("mrexodia"),               QString("mrexodia")},
-    {QString("Rinat Aminow"),           QString("RinatAminow")},
-    {QString("ktg kbh"),                QString("ktgkbh")},
-    {QString("David Zimmer"),           QString("DavidZimmer")},
-    {QString("Fernando Mercês"),        QString("FernandoMerces")},
-    {QString("JuJu2015"),               QString("JuJu2015")},
-    {QString("Nomade"),                 QString("Nomade")},
-    {QString("JaeHuyng Lee"),           QString("JaeHuyngLee")},
-    {QString("misonothx"),              QString("misonothx")},
-    {QString("Elite_r"),                QString("Elite_r")},
-    {QString("FrenchYeti"),             QString("FrenchYeti")},
-    {QString("Nông Hoàng Tú"),          QString("NongHoangTu")},
-    {QString("Arnaud Dovi(class101)"),  QString("ArnaudDovi")},
-    {QString("Javi VR"),                QString("JaviVR")},
-    {QString("Adam(Hexacorn)"),         QString("Hexacorn")},
-    {QString("Tilt"),                   QString("Tilt")},
-    {QString("graysuit"),               QString("Gray")},
-    {QString("fr0zenbag"),              QString("fr0zenbag")},
-    {QString("Anderson Leite"),         QString("AndersonLeite")},
-    {QString("Jiří Vinopal"),           QString("JiriVinopal")},
-    {QString("Filip Navara"),           QString("FilipNavara")},
-    {QString("Dr.FarFar"),              QString("DrFarFar")},
-    {QString("Ali Hadi"),               QString("AliHadi")},
-    {QString("Leandro Fróes"),          QString("LeandroFroes")},
-    {QString("phithon"),                QString("phithon")},
-    {QString("Christopher Layne"),      QString("clayne")},
-};
-
 DialogAbout::DialogAbout(QWidget *pParent) :
     QDialog(pParent),
     ui(new Ui::DialogAbout)
 {
     ui->setupUi(this);
 
-    ui->tabWidgetAbout->setCurrentIndex(0);
+    XAboutWidget::DATA _data={};
 
-    QString sInfoText=ui->labelInfo->text();
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">%1</span></p>")
+            .arg(XOptions::getTitle(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">Copyright (C) 2006-2008 Hellsp@wn</span></p>");
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">Copyright (C) 2012-2022 Hors</span></p>");
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">%1: </span><a href=\"mailto:horsicq@gmail.com\"><span style=\" text-decoration: underline; color:#ff0000;\">horsicq@gmail.com</span></a></p>")
+            .arg(tr("Bugreports"));
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">%1: </span><a href=\"http://ntinfo.biz\"><span style=\" text-decoration: underline; color:#ff0000;\">http://ntinfo.biz</span></a></p>")
+            .arg(tr("Website"));
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">%1(Paypal): </span><a href=\"ntinfo.re@gmail.com\"><span style=\" text-decoration: underline; color:#ff0000;\">ntinfo.re@gmail.com</span></a></p>")
+            .arg(tr("Donate"));
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">%1(BTC): </span><a href=\"3DqddVBX9PKqMvNPXZ3gPHBNNRtD9CnmJo\"><span style=\" text-decoration: underline; color:#ff0000;\">3DqddVBX9PKqMvNPXZ3gPHBNNRtD9CnmJo</span></a></p>")
+            .arg(tr("Donate"));
+    _data.sInfo+=QString("<p align=\"center\"><span style=\" font-weight:600;\">%1: </span><a href=\"https://github.com/horsicq/DIE-engine\"><span style=\" text-decoration: underline; color:#ff0000;\">https://github.com/horsicq/DIE-engine</span></a></p>")
+            .arg(tr("Source code"));
 
-    sInfoText=sInfoText.replace("#VERSION#",QString("%1 %2(%3)").arg(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION,__DATE__));
+    _data.sLibraries+=QString("<p align=\"center\"><span style=\" font-weight:600;\">QT Library %1 </span><a href=\"http://qt-project.org\"><span style=\" text-decoration: underline; color:#ff0000;\">http://qt-project.org</span></a></p>")
+            .arg(QT_VERSION_STR);
+    _data.sLibraries+=QString("<p align=\"center\"><span style=\" font-weight:600;\">QWT Library %1 </span><a href=\"http://qwt.sourceforge.net\"><span style=\" text-decoration: underline; color:#ff0000;\">http://qwt.sourceforge.net</span></a></p>")
+            .arg(QWT_VERSION_STR);
+    _data.sLibraries+=QString("<p align=\"center\"><span style=\" font-weight:600;\">Capstone %1.%2.%3 </span><a href=\"http://www.capstone-engine.org\"><span style=\" text-decoration: underline; color:#ff0000;\">http://www.capstone-engine.org</span></a></p>")
+            .arg(QString::number(CS_VERSION_MAJOR),QString::number(CS_VERSION_MINOR),QString::number(CS_VERSION_EXTRA));
 
-    ui->labelInfo->setText(sInfoText);
+    _data.sLogoPath=":/images/about.png";
+    _data.sUpdatesLink="https://github.com/horsicq/DIE-engine/releases";
 
-    QString sComponentsText=ui->labelComponents->text();
+#ifndef QT_DEBUG
+    _data.sThanksPath=XOptions().getApplicationDataPath()+QDir::separator()+"images"+QDir::separator()+"thanks";
+#else
+    QDir dir(XOptions().getApplicationDataPath());
 
-    sComponentsText=sComponentsText.replace("#QT#",QT_VERSION_STR);
-    sComponentsText=sComponentsText.replace("#QWT#",QWT_VERSION_STR);
-    sComponentsText=sComponentsText.replace("#CAPSTONE#",QString("%1.%2.%3").arg(CS_VERSION_MAJOR).arg(CS_VERSION_MINOR).arg(CS_VERSION_EXTRA));
+    dir.cdUp();
+    dir.cdUp();
 
-    ui->labelComponents->setText(sComponentsText);
+    _data.sThanksPath=dir.absolutePath()+QDir::separator()+"images"+QDir::separator()+"thanks";
+#endif
 
-    qint32 nCount=sizeof(_userinfo_records)/sizeof(USERINFO);
-
-    { 
-    #if QT_VERSION >= 0x050300
-        const QSignalBlocker blocker1(ui->listWidgetThanks);
-    #else
-        const bool bBlocked1=ui->listWidgetThanks->blockSignals(true);
-    #endif
-
-        for(qint32 i=0;i<nCount;i++)
-        {
-            QListWidgetItem *pItem=new QListWidgetItem;
-            pItem->setText(_userinfo_records[i].sUser);
-            pItem->setData(Qt::UserRole,QString("://images/avatars/%1.png").arg(_userinfo_records[i].sImage));
-
-            ui->listWidgetThanks->insertItem(i,pItem);
-        }
-
-    #if QT_VERSION < 0x050300
-        ui->listWidgetThanks->blockSignals(bBlocked1);
-    #endif
-    }
-
-    if(nCount)
-    {
-        random();
-    }
+    ui->widgetAbout->setData(_data);
 }
 
 DialogAbout::~DialogAbout()
@@ -164,39 +76,4 @@ DialogAbout::~DialogAbout()
 void DialogAbout::on_pushButtonOK_clicked()
 {
     this->close();
-}
-
-void DialogAbout::on_pushButtonCheckUpdates_clicked()
-{
-    QDesktopServices::openUrl(QUrl(X_UPDATEPAGE));
-}
-
-void DialogAbout::on_listWidgetThanks_currentItemChanged(QListWidgetItem *pCurrent, QListWidgetItem *pPrevious)
-{
-    Q_UNUSED(pPrevious)
-
-    if(pCurrent)
-    {
-        QString sImagePath=pCurrent->data(Qt::UserRole).toString();
-
-        QPixmap pixmap(sImagePath);
-        QIcon buttonIcon(pixmap);
-        ui->pushButtonAvatar->setIcon(buttonIcon);
-        ui->pushButtonAvatar->setIconSize(pixmap.rect().size());
-    }
-}
-
-void DialogAbout::on_pushButtonAvatar_clicked()
-{
-    random();
-}
-
-void DialogAbout::random()
-{
-    qint32 nCount=sizeof(_userinfo_records)/sizeof(USERINFO);
-
-    if(nCount)
-    {
-        ui->listWidgetThanks->setCurrentRow(XBinary::random(nCount));
-    }
 }

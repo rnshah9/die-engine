@@ -26,7 +26,7 @@ if [ -z "$X_ERROR" ]; then
         export X_MAINTAINER='hors <horsicq@gmail.com>'
         
         export X_HOMEPAGE='http://ntinfo.biz'
-        export X_DESCRIPTION='Program for determining types of files.'
+        export X_DESCRIPTION='Detect It Easy is a program for determining types of files.'
         
         if [ "$X_DEBIAN_VERSION" -ge "11" ]; then
             export X_DEPENDS='libqt5core5a, libqt5svg5, libqt5gui5, libqt5widgets5, libqt5opengl5, libqt5dbus5, libqt5scripttools5, libqt5script5, libqt5network5, libqt5sql5'
@@ -51,6 +51,7 @@ if [ -z "$X_ERROR" ]; then
         cp -f $X_SOURCE_PATH/gui_source/translation/*.qm                    $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/die/lang/
         mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/die/signatures
         cp -f $X_SOURCE_PATH/signatures/crypto.db                           $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/die/signatures/
+        cp -Rf $X_SOURCE_PATH/images                                        $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/die/
 
         make_deb
         mv $X_SOURCE_PATH/release/$X_BUILD_NAME.deb $X_SOURCE_PATH/release/die_${X_RELEASE_VERSION}_${X_OS_VERSION}_${X_ARCHITECTURE}.deb

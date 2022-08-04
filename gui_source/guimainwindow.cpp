@@ -22,8 +22,8 @@
 #include "ui_guimainwindow.h"
 
 GuiMainWindow::GuiMainWindow(QWidget *pParent)
-    : QMainWindow(pParent)
-    , ui(new Ui::GuiMainWindow)
+    : QMainWindow(pParent),
+      ui(new Ui::GuiMainWindow)
 {
     ui->setupUi(this);
 
@@ -44,6 +44,7 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent)
     g_xOptions.addID(XOptions::ID_VIEW_SINGLEAPPLICATION,false);
     g_xOptions.addID(XOptions::ID_FILE_SAVELASTDIRECTORY,true);
     g_xOptions.addID(XOptions::ID_FILE_SAVEBACKUP,true);
+    g_xOptions.addID(XOptions::ID_FILE_SAVERECENTFILES,true);
 
 #ifdef Q_OS_WIN32
     g_xOptions.addID(XOptions::ID_FILE_CONTEXT,"*");
@@ -53,6 +54,7 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent)
     SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
     XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
     XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
+    XOnlineToolsOptionsWidget::setDefaultValues(&g_xOptions);
 
     g_xOptions.load();
 
@@ -67,6 +69,12 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent)
     g_xShortcuts.load();
 
     ui->widgetFormats->setGlobal(&g_xShortcuts,&g_xOptions);
+
+    connect(&g_xOptions,SIGNAL(openFile(QString)),this,SLOT(processFile(QString)));
+
+    g_pRecentFilesMenu=g_xOptions.createRecentFilesMenu(this);
+
+    ui->toolButtonRecentFiles->setEnabled(g_xOptions.getRecentFiles().count());
 
     adjust();
 
@@ -100,176 +108,13 @@ void GuiMainWindow::on_pushButtonAbout_clicked()
 
 void GuiMainWindow::on_pushButtonOptions_clicked()
 {
-    DialogOptions dialogOptions(this,&g_xOptions);
+    DialogOptions dialogOptions(this,&g_xOptions,XOptions::GROUPID_FILE);
 
     dialogOptions.exec();
 
     adjust();
     ui->widgetFormats->adjustView();
     adjustFile();
-}
-
-void GuiMainWindow::on_pushButtonFileInfo_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(file.open(QIODevice::ReadOnly))
-        {
-            DialogXFileInfo dialogFileInfo(this);
-            dialogFileInfo.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogFileInfo.setData(&file,XBinary::FT_UNKNOWN,true);
-
-            dialogFileInfo.exec();
-
-            file.close();
-        }
-    }
-}
-
-void GuiMainWindow::on_pushButtonMIME_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(file.open(QIODevice::ReadOnly))
-        {
-            DialogMIME dialogMIME(this,&file);
-            dialogMIME.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogMIME.exec();
-
-            file.close();
-        }
-    }
-}
-
-void GuiMainWindow::on_pushButtonHex_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(XBinary::tryToOpen(&file))
-        {
-            XHexView::OPTIONS hexOptions={};
-
-            DialogHexView dialogHex(this,&file,hexOptions,&file);
-            dialogHex.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogHex.exec();
-
-            file.close();
-        }
-    }
-}
-
-void GuiMainWindow::on_pushButtonStrings_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(file.open(QIODevice::ReadOnly))
-        {
-            SearchStringsWidget::OPTIONS stringsOptions={};
-            stringsOptions.bAnsi=true;
-            stringsOptions.bUTF8=false;
-            stringsOptions.bUnicode=true;
-            stringsOptions.bCStrings=true;
-
-            DialogSearchStrings dialogSearchStrings(this);
-            dialogSearchStrings.setData(&file,stringsOptions,true);
-            dialogSearchStrings.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogSearchStrings.exec();
-
-            file.close();
-        }
-    }
-}
-
-void GuiMainWindow::on_pushButtonSignatures_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(file.open(QIODevice::ReadOnly))
-        {
-            SearchSignaturesWidget::OPTIONS signaturesOptions={};
-
-            DialogSearchSignatures dialogSearchSignatures(this);
-            dialogSearchSignatures.setData(&file,XBinary::FT_UNKNOWN,signaturesOptions);
-            dialogSearchSignatures.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogSearchSignatures.exec();
-
-            file.close();
-        }
-    }
-}
-
-void GuiMainWindow::on_pushButtonEntropy_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(file.open(QIODevice::ReadOnly))
-        {
-            DialogEntropy dialogEntropy(this);
-            dialogEntropy.setData(&file);
-            dialogEntropy.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogEntropy.exec();
-
-            file.close();
-        }
-    }
-}
-
-void GuiMainWindow::on_pushButtonHash_clicked()
-{
-    QString sFileName=getCurrentFileName();
-
-    if(sFileName!="")
-    {
-        QFile file;
-        file.setFileName(sFileName);
-
-        if(file.open(QIODevice::ReadOnly))
-        {
-            DialogHash dialogHash(this);
-            dialogHash.setData(&file,XBinary::FT_UNKNOWN);
-            dialogHash.setGlobal(&g_xShortcuts,&g_xOptions);
-
-            dialogHash.exec();
-
-            file.close();
-        }
-    }
 }
 
 void GuiMainWindow::on_pushButtonDemangle_clicked()
@@ -295,12 +140,14 @@ void GuiMainWindow::adjustFile()
 {
     QString sFileName=getCurrentFileName();
 
-    g_xOptions.setLastDirectory(sFileName);
+    g_xOptions.setLastFileName(sFileName);
+
+    ui->toolButtonRecentFiles->setEnabled(g_xOptions.getRecentFiles().count());
 }
 
 void GuiMainWindow::processFile(QString sFileName)
 {
-    ui->lineEditFileName->setText(sFileName);
+    ui->lineEditFileName->setText(QDir().toNativeSeparators(sFileName));
 
     if(sFileName!="")
     {
@@ -360,4 +207,11 @@ void GuiMainWindow::on_pushButtonShortcuts_clicked()
     dialogShortcuts.exec();
 
     adjust();
+}
+
+void GuiMainWindow::on_toolButtonRecentFiles_clicked()
+{
+    g_pRecentFilesMenu->exec(QCursor::pos());
+
+    ui->toolButtonRecentFiles->setEnabled(g_xOptions.getRecentFiles().count());
 }

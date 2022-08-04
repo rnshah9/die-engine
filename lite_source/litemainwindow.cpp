@@ -22,14 +22,15 @@
 #include "ui_litemainwindow.h"
 
 LiteMainWindow::LiteMainWindow(QWidget *pParent)
-    : QMainWindow(pParent)
-    , ui(new Ui::LiteMainWindow)
+    : QMainWindow(pParent),
+      ui(new Ui::LiteMainWindow)
 {
     ui->setupUi(this);
 
     setWindowTitle(XOptions::getTitle(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
 
     setAcceptDrops(true);
+    installEventFilter(this);
 
     g_pDieScript=new DiE_Script;
     g_pDieScript->loadDatabase(XOptions().getApplicationDataPath()+QDir::separator()+"db");
@@ -52,12 +53,14 @@ void LiteMainWindow::processFile(QString sFileName)
 {
     ui->plainTextEditResult->clear();
 
-    ui->lineEditFileName->setText(sFileName);
+    ui->lineEditFileName->setText(QDir().toNativeSeparators(sFileName));
 
     if(sFileName!="")
     {
-        DiE_Script::SCAN_OPTIONS scanOptions={};
-        scanOptions.bDeepScan=ui->checkBoxDeepScan->isChecked();
+        DiE_Script::OPTIONS scanOptions={};
+        scanOptions.bIsDeepScan=ui->checkBoxDeepScan->isChecked();
+        scanOptions.bIsHeuristicScan=ui->checkBoxHeuristicScan->isChecked();
+        scanOptions.bIsVerbose=ui->checkBoxVerbose->isChecked();
         scanOptions.bAllTypesScan=ui->checkBoxAllTypesScan->isChecked();
         scanOptions.bShowType=true;
         scanOptions.bShowVersion=true;
@@ -124,4 +127,14 @@ void LiteMainWindow::dropEvent(QDropEvent *event)
             processFile(sFileName);
         }
     }
+}
+
+void LiteMainWindow::keyPressEvent(QKeyEvent *pEvent)
+{
+    if(pEvent->key()==Qt::Key_Escape)
+    {
+        this->close();
+    }
+
+    QWidget::keyPressEvent(pEvent);
 }

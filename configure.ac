@@ -1,4 +1,4 @@
-AC_INIT([Detect It Easy], 3.05)
+AC_INIT([Detect It Easy], 3.06)
 AC_PROG_CC
 AC_LANG(C++)
 PKG_CHECK_MODULES(Qt5Core,              [Qt5Core >= 5.2.0],             [], [AC_MSG_ERROR([Qt5Core >= 5.2.0] is required.)])
@@ -7,6 +7,7 @@ PKG_CHECK_MODULES(Qt5Widgets,           [Qt5Widgets >= 5.2.0],          [], [AC_
 PKG_CHECK_MODULES(Qt5Sql,               [Qt5Sql >= 5.2.0],              [], [AC_MSG_ERROR([Qt5Sql >= 5.2.0] is required.)])
 PKG_CHECK_MODULES(Qt5Script,            [Qt5Script >= 5.2.0],           [], [AC_MSG_ERROR([Qt5Script >= 5.2.0] is required.)])
 PKG_CHECK_MODULES(Qt5ScriptTools,       [Qt5ScriptTools >= 5.2.0],      [], [AC_MSG_ERROR([Qt5ScriptTools >= 5.2.0] is required.)])
+PKG_CHECK_MODULES(Qt5Network,           [Qt5Network >= 5.2.0],          [], [AC_MSG_ERROR([Qt5Network >= 5.2.0] is required.)])
  
 PKG_CHECK_EXISTS([Qt5Core >= 5.2.0],[PKG_CHECK_VAR(QT_QMAKE,[Qt5Core >= 5.2.0],[host_bins])])
 

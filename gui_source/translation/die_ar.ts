@@ -52,7 +52,7 @@
         <translation>ينسخ</translation>
     </message>
     <message>
-        <source>Filename</source>
+        <source>File name</source>
         <translation>اسم الملف</translation>
     </message>
     <message>
@@ -116,6 +116,10 @@
         <translation>منقي</translation>
     </message>
     <message>
+        <source>Save</source>
+        <translation>يحفظ</translation>
+    </message>
+    <message>
         <source>Info</source>
         <translation>معلومات</translation>
     </message>
@@ -163,6 +167,10 @@
         <translation>مسح ارشادي</translation>
     </message>
     <message>
+        <source>Verbose</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>All types</source>
         <translation>كل الانواع</translation>
     </message>
@@ -190,16 +198,20 @@
         <translation>التوقيعات</translation>
     </message>
     <message>
-        <source>Deep scan</source>
-        <translation>تفحص بعمق</translation>
-    </message>
-    <message>
         <source>Recursive scan</source>
         <translation>مسح تكراري</translation>
     </message>
     <message>
-        <source>All types</source>
-        <translation>كل الانواع</translation>
+        <source>Deep scan</source>
+        <translation>تفحص بعمق</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>مسح ارشادي</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation></translation>
     </message>
     <message>
         <source>Directory</source>
@@ -208,6 +220,10 @@
     <message>
         <source>Log</source>
         <translation>سجل</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>كل الانواع</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -231,6 +247,10 @@
     <message>
         <source>Cannot load database</source>
         <translation>لا يمكن تحميل قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>مسح الدليل</translation>
     </message>
     <message>
         <source>Archive</source>
@@ -352,24 +372,24 @@
         <translation>عن</translation>
     </message>
     <message>
+        <source>OK</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>Bugreports</source>
+        <translation>تقارير الأخطاء</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>موقع إلكتروني</translation>
+    </message>
+    <message>
         <source>Donate</source>
         <translation>يتبرع</translation>
     </message>
     <message>
-        <source>Thanks</source>
-        <translation>شكرا</translation>
-    </message>
-    <message>
-        <source>Libraries</source>
-        <translation>مكتبات</translation>
-    </message>
-    <message>
-        <source>Check updates</source>
-        <translation>تفقد التحديث</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>نعم</translation>
+        <source>Source code</source>
+        <translation>مصدر الرمز</translation>
     </message>
 </context>
 <context>
@@ -456,12 +476,20 @@
         <translation>الدلائل الفرعية</translation>
     </message>
     <message>
+        <source>Recursive scan</source>
+        <translation>مسح تكراري</translation>
+    </message>
+    <message>
         <source>Deep scan</source>
         <translation>تفحص بعمق</translation>
     </message>
     <message>
-        <source>Recursive scan</source>
-        <translation>مسح تكراري</translation>
+        <source>Heuristic scan</source>
+        <translation>مسح ارشادي</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation></translation>
     </message>
     <message>
         <source>All types</source>
@@ -588,7 +616,7 @@
     </message>
 </context>
 <context>
-    <name>DialogDump</name>
+    <name>DialogDumpProcess</name>
     <message>
         <source>Dump</source>
         <translation>أحمق</translation>
@@ -599,18 +627,30 @@
     </message>
 </context>
 <context>
-    <name>DialogDumpProcess</name>
+    <name>DialogEditString</name>
     <message>
-        <source>Dump</source>
-        <translation>أحمق</translation>
+        <source>String</source>
+        <translation>سلسلة</translation>
+    </message>
+    <message>
+        <source>Keep size</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>C Strings</source>
+        <translation>سلاسل</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>نعم</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>يلغي</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
+        <source>Bytes available</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -653,10 +693,6 @@
         <source>Cancel</source>
         <translation>يلغي</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
-    </message>
 </context>
 <context>
     <name>DialogGoToAddress</name>
@@ -667,6 +703,10 @@
     <message>
         <source>Address</source>
         <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>عرافة</translation>
     </message>
     <message>
         <source>OK</source>
@@ -718,9 +758,16 @@
         <source>Cancel</source>
         <translation>يلغي</translation>
     </message>
+</context>
+<context>
+    <name>DialogHexEdit</name>
     <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
+        <source>Edit</source>
+        <translation>يحرر</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>قريب</translation>
     </message>
 </context>
 <context>
@@ -893,24 +940,12 @@
         <source>Create view model</source>
         <translation>إنشاء نموذج العرض</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
-    </message>
 </context>
 <context>
     <name>DialogOptions</name>
     <message>
         <source>Options</source>
         <translation>خيارات</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>نعم</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>يلغي</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -921,12 +956,16 @@
         <translation>التوقيعات</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>معلومة</translation>
+        <source>Hex</source>
+        <translation>عرافة</translation>
     </message>
     <message>
-        <source>Please restart the application</source>
-        <translation>الرجاء إعادة تشغيل التطبيق</translation>
+        <source>Disasm</source>
+        <translation>كارثة</translation>
+    </message>
+    <message>
+        <source>Online tools</source>
+        <translation>أداة التوقيع</translation>
     </message>
 </context>
 <context>
@@ -938,10 +977,6 @@
     <message>
         <source>Cancel</source>
         <translation>يلغي</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
     </message>
 </context>
 <context>
@@ -1001,10 +1036,6 @@
         <source>Cancel</source>
         <translation>يلغي</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
-    </message>
 </context>
 <context>
     <name>DialogSearchSignatures</name>
@@ -1050,12 +1081,12 @@
         <translation>واضح</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>قريب</translation>
+        <source>Default</source>
+        <translation>تقصير</translation>
     </message>
     <message>
-        <source>Group</source>
-        <translation>مجموعة</translation>
+        <source>Close</source>
+        <translation>قريب</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1082,17 +1113,6 @@
     </message>
 </context>
 <context>
-    <name>DialogShowText</name>
-    <message>
-        <source>Text</source>
-        <translation>نص</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>قريب</translation>
-    </message>
-</context>
-<context>
     <name>DialogSignatures</name>
     <message>
         <source>Signatures</source>
@@ -1101,14 +1121,6 @@
     <message>
         <source>Save</source>
         <translation>يحفظ</translation>
-    </message>
-    <message>
-        <source>Run</source>
-        <translation>يركض</translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation>تصحيح</translation>
     </message>
     <message>
         <source>Readonly</source>
@@ -1123,12 +1135,28 @@
         <translation>عرض الإصدار</translation>
     </message>
     <message>
+        <source>Run</source>
+        <translation>يركض</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>تصحيح</translation>
+    </message>
+    <message>
         <source>Show options</source>
         <translation>عرض الخيارات</translation>
     </message>
     <message>
         <source>Deep scan</source>
         <translation>تفحص بعمق</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>مسح ارشادي</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation></translation>
     </message>
     <message>
         <source>Clear result</source>
@@ -1170,6 +1198,10 @@
         <translation>مسح ارشادي</translation>
     </message>
     <message>
+        <source>Verbose</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>All types</source>
         <translation>كل الانواع</translation>
     </message>
@@ -1207,6 +1239,10 @@
     <message>
         <source>Heuristic scan</source>
         <translation>مسح ارشادي</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation></translation>
     </message>
     <message>
         <source>All types</source>
@@ -1271,8 +1307,24 @@
         <translation>معلومات</translation>
     </message>
     <message>
+        <source>Save</source>
+        <translation>يحفظ</translation>
+    </message>
+    <message>
         <source>Close</source>
         <translation>قريب</translation>
+    </message>
+    <message>
+        <source>Text documents</source>
+        <translation>مستندات نصية</translation>
+    </message>
+    <message>
+        <source>Save result</source>
+        <translation>حفظ النتيجة</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتيجة</translation>
     </message>
 </context>
 <context>
@@ -1284,6 +1336,29 @@
     <message>
         <source>Cancel</source>
         <translation>يلغي</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXDisasmViewColors</name>
+    <message>
+        <source>Colors</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>يلغي</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>نص</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1313,6 +1388,39 @@
     <message>
         <source>Cancel</source>
         <translation>يلغي</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXInfoDBTransferProcess</name>
+    <message>
+        <source>Cancel</source>
+        <translation>يلغي</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>يستورد</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>يصدر</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXSymbols</name>
+    <message>
+        <source>Symbols</source>
+        <translation>حرف او رمز</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>قريب</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXVirusTotal</name>
+    <message>
+        <source>Close</source>
+        <translation>قريب</translation>
     </message>
 </context>
 <context>
@@ -1586,12 +1694,20 @@
         <source>Type</source>
         <translation>نوع</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>تلقائي</translation>
+    </message>
 </context>
 <context>
     <name>GuiMainWindow</name>
     <message>
         <source>File name</source>
         <translation>اسم الملف</translation>
+    </message>
+    <message>
+        <source>File info</source>
+        <translation></translation>
     </message>
     <message>
         <source>Hash</source>
@@ -1666,6 +1782,10 @@
     <message>
         <source>Heuristic scan</source>
         <translation>مسح ارشادي</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation></translation>
     </message>
     <message>
         <source>All types</source>
@@ -1767,41 +1887,6 @@
     <message>
         <source>Edit</source>
         <translation>يحرر</translation>
-    </message>
-</context>
-<context>
-    <name>LiteMainWindow</name>
-    <message>
-        <source>File name</source>
-        <translation>اسم الملف</translation>
-    </message>
-    <message>
-        <source>Deep scan</source>
-        <translation>تفحص بعمق</translation>
-    </message>
-    <message>
-        <source>All types</source>
-        <translation>كل الانواع</translation>
-    </message>
-    <message>
-        <source>Scan</source>
-        <translation>مسح</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>مخرج</translation>
-    </message>
-    <message>
-        <source>msec</source>
-        <translation>مللي ثانية</translation>
-    </message>
-    <message>
-        <source>Open file</source>
-        <translation>افتح الملف</translation>
-    </message>
-    <message>
-        <source>All files</source>
-        <translation>كل الملفات</translation>
     </message>
 </context>
 <context>
@@ -2127,12 +2212,16 @@
         <translation>مسح ارشادي</translation>
     </message>
     <message>
-        <source>All types</source>
-        <translation>كل الانواع</translation>
+        <source>Verbose</source>
+        <translation></translation>
     </message>
     <message>
         <source>Directory</source>
         <translation>الدليل</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>كل الانواع</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -2145,6 +2234,49 @@
     <message>
         <source>msec</source>
         <translation>مللي ثانية</translation>
+    </message>
+</context>
+<context>
+    <name>PDFWidget</name>
+    <message>
+        <source>Reload</source>
+        <translation>إعادة تحميل</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>عرافة</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>سلاسل</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>خريطة الذاكرة</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>غير قادر علي</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>مسح ارشادي</translation>
+    </message>
+    <message>
+        <source>Readonly</source>
+        <translation>يقرأ فقط</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>معلومات</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>تجزئة</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>التوقيعات</translation>
     </message>
 </context>
 <context>
@@ -2180,6 +2312,14 @@
     <message>
         <source>Size</source>
         <translation>مقاس</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>لغة</translation>
+    </message>
+    <message>
+        <source>String</source>
+        <translation>سلسلة</translation>
     </message>
     <message>
         <source>Certificate</source>
@@ -2322,6 +2462,10 @@
     <message>
         <source>Resources</source>
         <translation>موارد</translation>
+    </message>
+    <message>
+        <source>String table</source>
+        <translation>جدول سلسلة</translation>
     </message>
     <message>
         <source>Version</source>
@@ -2538,20 +2682,28 @@
         <translation>التوقيعات</translation>
     </message>
     <message>
-        <source>Copy name</source>
-        <translation>نسخ الاسم</translation>
+        <source>Copy</source>
+        <translation>ينسخ</translation>
     </message>
     <message>
-        <source>Copy signature</source>
-        <translation>نسخة التوقيع</translation>
+        <source>Follow in</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>نسخ العنوان</translation>
+        <source>Name</source>
+        <translation>اسم</translation>
     </message>
     <message>
-        <source>Copy offset</source>
-        <translation>نسخة الإزاحة</translation>
+        <source>Signature</source>
+        <translation>إمضاء</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation>عوض</translation>
     </message>
     <message>
         <source>Hex</source>
@@ -2563,6 +2715,10 @@
     <message>
         <source>Filter</source>
         <translation>منقي</translation>
+    </message>
+    <message>
+        <source>C Strings</source>
+        <translation>سلاسل</translation>
     </message>
     <message>
         <source>Save</source>
@@ -2577,20 +2733,32 @@
         <translation>سلاسل</translation>
     </message>
     <message>
-        <source>Copy string</source>
-        <translation>نسخ السلسلة</translation>
+        <source>Copy</source>
+        <translation>ينسخ</translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>نسخ العنوان</translation>
+        <source>Follow in</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Copy offset</source>
-        <translation>نسخة الإزاحة</translation>
+        <source>Edit</source>
+        <translation>يحرر</translation>
     </message>
     <message>
-        <source>Copy size</source>
-        <translation>حجم النسخ</translation>
+        <source>String</source>
+        <translation>سلسلة</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation>عوض</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>مقاس</translation>
     </message>
     <message>
         <source>Hex</source>
@@ -2599,6 +2767,14 @@
     <message>
         <source>Demangle</source>
         <translation>شطب</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Cannot save file</source>
+        <translation>لا يمكن حفظ الملف</translation>
     </message>
 </context>
 <context>
@@ -2788,13 +2964,6 @@
     </message>
 </context>
 <context>
-    <name>StaticScanItemModel</name>
-    <message>
-        <source>Result</source>
-        <translation>نتيجة</translation>
-    </message>
-</context>
-<context>
     <name>StaticScanOptionsWidget</name>
     <message>
         <source>Scan after open</source>
@@ -2813,6 +2982,10 @@
         <translation>مسح ارشادي</translation>
     </message>
     <message>
+        <source>Verbose</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>All types</source>
         <translation>كل الانواع</translation>
     </message>
@@ -2822,6 +2995,29 @@
     <message>
         <source>Strings</source>
         <translation>سلاسل</translation>
+    </message>
+</context>
+<context>
+    <name>XAboutWidget</name>
+    <message>
+        <source>Info</source>
+        <translation>معلومات</translation>
+    </message>
+    <message>
+        <source>Check updates</source>
+        <translation>تفقد التحديث</translation>
+    </message>
+    <message>
+        <source>Thanks</source>
+        <translation>شكرا</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>موقع إلكتروني</translation>
+    </message>
+    <message>
+        <source>Libraries</source>
+        <translation>مكتبات</translation>
     </message>
 </context>
 <context>
@@ -2901,6 +3097,10 @@
     <message>
         <source>GB</source>
         <translation>غيغابايت</translation>
+    </message>
+    <message>
+        <source>TB</source>
+        <translation></translation>
     </message>
     <message>
         <source>Header</source>
@@ -2986,6 +3186,21 @@
     </message>
 </context>
 <context>
+    <name>XDialogProcess</name>
+    <message>
+        <source>Process</source>
+        <translation>معالجة</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>يلغي</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+</context>
+<context>
     <name>XDisasmModel</name>
     <message>
         <source>Address</source>
@@ -3023,6 +3238,10 @@
         <translation>كود التشغيل</translation>
     </message>
     <message>
+        <source>Symbol</source>
+        <translation>رمز</translation>
+    </message>
+    <message>
         <source>Comment</source>
         <translation>تعليق</translation>
     </message>
@@ -3031,16 +3250,12 @@
         <translation>كود التشغيل غير صالح</translation>
     </message>
     <message>
-        <source>Go to address</source>
-        <translation>انتقل إلى العنوان</translation>
+        <source>Offset</source>
+        <translation>عوض</translation>
     </message>
     <message>
-        <source>Go to offset</source>
-        <translation>انتقل إلى الإزاحة</translation>
-    </message>
-    <message>
-        <source>Go to entry point</source>
-        <translation>اذهب إلى نقطة الدخول</translation>
+        <source>Entry point</source>
+        <translation>نقطة الدخول</translation>
     </message>
     <message>
         <source>Dump to file</source>
@@ -3055,8 +3270,12 @@
         <translation>إمضاء</translation>
     </message>
     <message>
-        <source>Find</source>
-        <translation>تجد</translation>
+        <source>String</source>
+        <translation>سلسلة</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
     </message>
     <message>
         <source>Find next</source>
@@ -3067,24 +3286,16 @@
         <translation>اختر الكل</translation>
     </message>
     <message>
-        <source>Copy as hex</source>
-        <translation>نسخ على شكل ست عشري</translation>
-    </message>
-    <message>
-        <source>Copy cursor offset</source>
-        <translation>نسخ إزاحة المؤشر</translation>
-    </message>
-    <message>
-        <source>Copy cursor address</source>
-        <translation>نسخ عنوان المؤشر</translation>
-    </message>
-    <message>
         <source>Hex</source>
         <translation>عرافة</translation>
     </message>
     <message>
         <source>Go to</source>
         <translation>اذهب إلى</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>تجد</translation>
     </message>
     <message>
         <source>Select</source>
@@ -3095,8 +3306,12 @@
         <translation>ينسخ</translation>
     </message>
     <message>
-        <source>Offset</source>
-        <translation>عوض</translation>
+        <source>Follow in</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>يحرر</translation>
     </message>
     <message>
         <source>Relative address</source>
@@ -3108,6 +3323,26 @@
     <message>
         <source>Font</source>
         <translation>الخط</translation>
+    </message>
+    <message>
+        <source>Syntax</source>
+        <translation>بناء الجملة</translation>
+    </message>
+    <message>
+        <source>Uppercase</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Address colon</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Highlight</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3184,8 +3419,23 @@
 <context>
     <name>XDynStructsEngine</name>
     <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
+    </message>
+    <message>
         <source>Cannot load file</source>
         <translation>لا يمكنني تحميل الملف</translation>
+    </message>
+</context>
+<context>
+    <name>XDynStructsOptionsWidget</name>
+    <message>
+        <source>Structs</source>
+        <translation>الهياكل</translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation>الدليل مفتوح</translation>
     </message>
 </context>
 <context>
@@ -3297,6 +3547,14 @@
         <translation>المناطق</translation>
     </message>
     <message>
+        <source>Diagram</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Bytes</source>
         <translation>بايت</translation>
     </message>
@@ -3324,6 +3582,38 @@
 <context>
     <name>XFileInfo</name>
     <message>
+        <source>Info</source>
+        <translation>معلومات</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>تجزئة</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>غير قادر علي</translation>
+    </message>
+    <message>
+        <source>Entry point</source>
+        <translation>نقطة الدخول</translation>
+    </message>
+    <message>
+        <source>Header</source>
+        <translation>رأس</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>إصدار</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation>اسم الملف</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>مقاس</translation>
+    </message>
+    <message>
         <source>Operation system</source>
         <translation>نظام تشغيل</translation>
     </message>
@@ -3340,20 +3630,8 @@
         <translation>نوع</translation>
     </message>
     <message>
-        <source>File name</source>
-        <translation>اسم الملف</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation>مقاس</translation>
-    </message>
-    <message>
-        <source>Hash</source>
-        <translation>تجزئة</translation>
-    </message>
-    <message>
-        <source>Entropy</source>
-        <translation>غير قادر علي</translation>
+        <source>Endianness</source>
+        <translation>Endianness</translation>
     </message>
     <message>
         <source>packed</source>
@@ -3362,6 +3640,30 @@
     <message>
         <source>not packed</source>
         <translation>غير معبأ</translation>
+    </message>
+    <message>
+        <source>File type</source>
+        <translation>نوع الملف</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation>عوض</translation>
+    </message>
+    <message>
+        <source>Relative address</source>
+        <translation>العنوان النسبي</translation>
+    </message>
+    <message>
+        <source>Bytes</source>
+        <translation>بايت</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>إمضاء</translation>
     </message>
 </context>
 <context>
@@ -3375,24 +3677,24 @@
         <translation>نوع</translation>
     </message>
     <message>
-        <source>Offset</source>
-        <translation>عوض</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation>مقاس</translation>
+        <source>Method</source>
+        <translation>طريقة</translation>
     </message>
     <message>
         <source>Comment</source>
         <translation>تعليق</translation>
     </message>
     <message>
+        <source>Reload</source>
+        <translation>إعادة تحميل</translation>
+    </message>
+    <message>
         <source>Save</source>
         <translation>يحفظ</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>إعادة تحميل</translation>
+        <source>Text</source>
+        <translation>نص</translation>
     </message>
     <message>
         <source>Info</source>
@@ -3452,6 +3754,10 @@
         <source>Offset</source>
         <translation>عوض</translation>
     </message>
+    <message>
+        <source>Hex</source>
+        <translation>عرافة</translation>
+    </message>
 </context>
 <context>
     <name>XHexView</name>
@@ -3472,14 +3778,6 @@
         <translation>عوض</translation>
     </message>
     <message>
-        <source>Go to offset</source>
-        <translation>انتقل إلى الإزاحة</translation>
-    </message>
-    <message>
-        <source>Go to address</source>
-        <translation>انتقل إلى العنوان</translation>
-    </message>
-    <message>
         <source>Dump to file</source>
         <translation>تفريغ إلى ملف</translation>
     </message>
@@ -3488,8 +3786,12 @@
         <translation>إمضاء</translation>
     </message>
     <message>
-        <source>Find</source>
-        <translation>تجد</translation>
+        <source>String</source>
+        <translation>سلسلة</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
     </message>
     <message>
         <source>Find next</source>
@@ -3498,18 +3800,6 @@
     <message>
         <source>Select all</source>
         <translation>اختر الكل</translation>
-    </message>
-    <message>
-        <source>Copy as hex</source>
-        <translation>نسخ على شكل ست عشري</translation>
-    </message>
-    <message>
-        <source>Copy cursor offset</source>
-        <translation>نسخ إزاحة المؤشر</translation>
-    </message>
-    <message>
-        <source>Copy cursor address</source>
-        <translation>نسخ عنوان المؤشر</translation>
     </message>
     <message>
         <source>Disasm</source>
@@ -3524,6 +3814,10 @@
         <translation>اذهب إلى</translation>
     </message>
     <message>
+        <source>Find</source>
+        <translation>تجد</translation>
+    </message>
+    <message>
         <source>Select</source>
         <translation>يختار</translation>
     </message>
@@ -3531,12 +3825,24 @@
         <source>Copy</source>
         <translation>ينسخ</translation>
     </message>
+    <message>
+        <source>Follow in</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>يحرر</translation>
+    </message>
 </context>
 <context>
     <name>XHexViewOptionsWidget</name>
     <message>
         <source>Font</source>
         <translation>الخط</translation>
+    </message>
+    <message>
+        <source>Address colon</source>
+        <translation>عنوان</translation>
     </message>
 </context>
 <context>
@@ -3549,9 +3855,48 @@
         <source>Hex</source>
         <translation>عرافة</translation>
     </message>
+</context>
+<context>
+    <name>XInfoDB</name>
     <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
+        <source>Unknown</source>
+        <translation>مجهول</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ملصق</translation>
+    </message>
+    <message>
+        <source>Entry point</source>
+        <translation>نقطة الدخول</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>يصدر</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>يستورد</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>البيانات</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>هدف</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3655,6 +4000,10 @@
         <translation>هندسة معمارية</translation>
     </message>
     <message>
+        <source>Show all</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Memory map</source>
         <translation>خريطة الذاكرة</translation>
     </message>
@@ -3682,20 +4031,12 @@
         <translation>استمارة</translation>
     </message>
     <message>
-        <source>Type</source>
-        <translation>نوع</translation>
-    </message>
-    <message>
         <source>Mode</source>
         <translation>الوضع</translation>
     </message>
     <message>
-        <source>Syntax</source>
-        <translation>بناء الجملة</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>خطأ</translation>
+        <source>Symbols</source>
+        <translation>حرف او رمز</translation>
     </message>
 </context>
 <context>
@@ -3703,6 +4044,36 @@
     <message>
         <source>Unknown</source>
         <translation>مجهول</translation>
+    </message>
+</context>
+<context>
+    <name>XOnlineToolsOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Get</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>API key</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>XOptions</name>
+    <message>
+        <source>Automatic</source>
+        <translation>تلقائي</translation>
+    </message>
+    <message>
+        <source>Recent files</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>واضح</translation>
     </message>
 </context>
 <context>
@@ -3728,6 +4099,10 @@
         <translation>إظهار الشعار</translation>
     </message>
     <message>
+        <source>Font</source>
+        <translation>الخط</translation>
+    </message>
+    <message>
         <source>Save last directory</source>
         <translation>حفظ الدليل الأخير</translation>
     </message>
@@ -3736,8 +4111,24 @@
         <translation>احفظ النسخة الاحتياطية</translation>
     </message>
     <message>
+        <source>Save history</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Add to context menu</source>
         <translation>أضف إلى قائمة السياق</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>تقصير</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>يلغي</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -3746,6 +4137,22 @@
     <message>
         <source>File</source>
         <translation>ملف</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Please run the program as an administrator</source>
+        <translation>يرجى تشغيل البرنامج كمسؤول</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>معلومة</translation>
+    </message>
+    <message>
+        <source>Please restart the application</source>
+        <translation>الرجاء إعادة تشغيل التطبيق</translation>
     </message>
 </context>
 <context>
@@ -3829,8 +4236,132 @@
 <context>
     <name>XShortcuts</name>
     <message>
-        <source>Unknown</source>
-        <translation>مجهول</translation>
+        <source>Action</source>
+        <translation>عمل</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>رأي</translation>
+    </message>
+    <message>
+        <source>String</source>
+        <translation>سلسلة</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>سلاسل</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>إمضاء</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>التوقيعات</translation>
+    </message>
+    <message>
+        <source>Struct</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>عرافة</translation>
+    </message>
+    <message>
+        <source>Disasm</source>
+        <translation>كارثة</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>تصحيح</translation>
+    </message>
+    <message>
+        <source>Debugger</source>
+        <translation>المصحح</translation>
+    </message>
+    <message>
+        <source>Register</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Stack</source>
+        <translation>كومة</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>أرشيف</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>طاولة</translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation>معالجة</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>ذاكرة</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>ينسخ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>يحرر</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>تجد</translation>
+    </message>
+    <message>
+        <source>Go to</source>
+        <translation>اذهب إلى</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>أدوات</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>يساعد</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>يختار</translation>
+    </message>
+    <message>
+        <source>Follow in</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Show in</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Breakpoint</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Modules</source>
+        <translation>الوحدات</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>خريطة الذاكرة</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>تبين</translation>
     </message>
     <message>
         <source>Open</source>
@@ -3841,8 +4372,8 @@
         <translation>يحفظ</translation>
     </message>
     <message>
-        <source>Save As</source>
-        <translation>حفظ باسم</translation>
+        <source>Save as</source>
+        <translation></translation>
     </message>
     <message>
         <source>Close</source>
@@ -3857,104 +4388,40 @@
         <translation>مخرج</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>ينسخ</translation>
+        <source>Dump to file</source>
+        <translation>تفريغ إلى ملف</translation>
     </message>
     <message>
-        <source>Show</source>
-        <translation>تبين</translation>
+        <source>Address</source>
+        <translation>عنوان</translation>
     </message>
     <message>
-        <source>Copy string</source>
-        <translation>نسخ السلسلة</translation>
+        <source>Entry point</source>
+        <translation>نقطة الدخول</translation>
     </message>
     <message>
-        <source>Copy offset</source>
-        <translation>نسخة الإزاحة</translation>
+        <source>Offset</source>
+        <translation>عوض</translation>
     </message>
     <message>
-        <source>Copy size</source>
-        <translation>حجم النسخ</translation>
-    </message>
-    <message>
-        <source>Hex</source>
-        <translation>عرافة</translation>
+        <source>Size</source>
+        <translation>مقاس</translation>
     </message>
     <message>
         <source>Demangle</source>
         <translation>شطب</translation>
     </message>
     <message>
-        <source>Copy name</source>
-        <translation>نسخ الاسم</translation>
+        <source>Name</source>
+        <translation>اسم</translation>
     </message>
     <message>
-        <source>Copy signature</source>
-        <translation>نسخة التوقيع</translation>
+        <source>Next</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>نسخ العنوان</translation>
-    </message>
-    <message>
-        <source>Dump to file</source>
-        <translation>تفريغ إلى ملف</translation>
-    </message>
-    <message>
-        <source>Go to address</source>
-        <translation>انتقل إلى العنوان</translation>
-    </message>
-    <message>
-        <source>Go to offset</source>
-        <translation>انتقل إلى الإزاحة</translation>
-    </message>
-    <message>
-        <source>Signature</source>
-        <translation>إمضاء</translation>
-    </message>
-    <message>
-        <source>Signatures</source>
-        <translation>التوقيعات</translation>
-    </message>
-    <message>
-        <source>Find</source>
-        <translation>تجد</translation>
-    </message>
-    <message>
-        <source>Find next</source>
-        <translation>بحث عن التالي</translation>
-    </message>
-    <message>
-        <source>Select all</source>
-        <translation>اختر الكل</translation>
-    </message>
-    <message>
-        <source>Copy as hex</source>
-        <translation>نسخ على شكل ست عشري</translation>
-    </message>
-    <message>
-        <source>Copy cursor offset</source>
-        <translation>نسخ إزاحة المؤشر</translation>
-    </message>
-    <message>
-        <source>Copy cursor address</source>
-        <translation>نسخ عنوان المؤشر</translation>
-    </message>
-    <message>
-        <source>Disasm</source>
-        <translation>كارثة</translation>
-    </message>
-    <message>
-        <source>Memory map</source>
-        <translation>خريطة الذاكرة</translation>
-    </message>
-    <message>
-        <source>Go to entry point</source>
-        <translation>اذهب إلى نقطة الدخول</translation>
-    </message>
-    <message>
-        <source>Hex signature</source>
-        <translation>التوقيع السداسي</translation>
+        <source>All</source>
+        <translation>الجميع</translation>
     </message>
     <message>
         <source>Attach</source>
@@ -3969,10 +4436,6 @@
         <translation>وحدة المعالجة المركزية</translation>
     </message>
     <message>
-        <source>Actions</source>
-        <translation>أجراءات</translation>
-    </message>
-    <message>
         <source>Log</source>
         <translation>سجل</translation>
     </message>
@@ -3981,8 +4444,8 @@
         <translation>نقاط التوقف</translation>
     </message>
     <message>
-        <source>Call stack</source>
-        <translation>مكدس المكالمات</translation>
+        <source>Callstack</source>
+        <translation></translation>
     </message>
     <message>
         <source>Threads</source>
@@ -3991,6 +4454,38 @@
     <message>
         <source>Handles</source>
         <translation>مقابض</translation>
+    </message>
+    <message>
+        <source>Symbols</source>
+        <translation>حرف او رمز</translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation>الاختصارات</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>خيارات</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>عن</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation>اسم الملف</translation>
+    </message>
+    <message>
+        <source>Structs</source>
+        <translation>الهياكل</translation>
+    </message>
+    <message>
+        <source>Viewer</source>
+        <translation>مشاهد</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation></translation>
     </message>
     <message>
         <source>Run</source>
@@ -4021,8 +4516,8 @@
         <translation>تبديل</translation>
     </message>
     <message>
-        <source>Copy filename</source>
-        <translation>نسخ اسم الملف</translation>
+        <source>Scan</source>
+        <translation>مسح</translation>
     </message>
     <message>
         <source>Entropy</source>
@@ -4031,66 +4526,6 @@
     <message>
         <source>Hash</source>
         <translation>تجزئة</translation>
-    </message>
-    <message>
-        <source>Scan</source>
-        <translation>مسح</translation>
-    </message>
-    <message>
-        <source>Strings</source>
-        <translation>سلاسل</translation>
-    </message>
-    <message>
-        <source>Structs</source>
-        <translation>الهياكل</translation>
-    </message>
-    <message>
-        <source>Viewer</source>
-        <translation>مشاهد</translation>
-    </message>
-    <message>
-        <source>Action</source>
-        <translation>عمل</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation>ملف</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>رأي</translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation>تصحيح</translation>
-    </message>
-    <message>
-        <source>Debugger</source>
-        <translation>المصحح</translation>
-    </message>
-    <message>
-        <source>Registers</source>
-        <translation>السجلات</translation>
-    </message>
-    <message>
-        <source>Stack</source>
-        <translation>كومة</translation>
-    </message>
-    <message>
-        <source>Archive</source>
-        <translation>أرشيف</translation>
-    </message>
-    <message>
-        <source>Table</source>
-        <translation>طاولة</translation>
-    </message>
-    <message>
-        <source>Process</source>
-        <translation>معالجة</translation>
-    </message>
-    <message>
-        <source>Memory</source>
-        <translation>ذاكرة</translation>
     </message>
 </context>
 <context>
@@ -4114,6 +4549,108 @@
     <message>
         <source>Cannot save file</source>
         <translation>لا يمكن حفظ الملف</translation>
+    </message>
+</context>
+<context>
+    <name>XSymbolsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>يحفظ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>مقاس</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>Symbol</source>
+        <translation>رمز</translation>
+    </message>
+    <message>
+        <source>Symbols</source>
+        <translation>حرف او رمز</translation>
+    </message>
+</context>
+<context>
+    <name>XVirusTotalWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Rescan</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Show detects</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>موقع إلكتروني</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>يحفظ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>إعادة تحميل</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>معلومة</translation>
+    </message>
+    <message>
+        <source>Upload the file for analyze?</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Scan</source>
+        <translation>مسح</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>إصدار</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتيجة</translation>
+    </message>
+    <message>
+        <source>Please use valid API key</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>خيارات</translation>
+    </message>
+    <message>
+        <source>Online tools</source>
+        <translation>أداة التوقيع</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
     </message>
 </context>
 </TS>

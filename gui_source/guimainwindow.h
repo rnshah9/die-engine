@@ -24,18 +24,10 @@
 #include "../global.h"
 #include <QMainWindow>
 #include <QFileDialog>
-#include "dialogmime.h"
-#include "dialoghexview.h"
-#include "dialogentropy.h"
-#include "dialogsearchstrings.h"
-#include "dialogsearchsignatures.h"
-#include "dialogmemorymap.h"
-#include "dialoghash.h"
 #include "dialogabout.h"
 #include "dialogoptions.h"
 #include "xoptions.h"
 #include "dialogshortcuts.h"
-#include "dialogxfileinfo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class GuiMainWindow; }
@@ -54,15 +46,9 @@ private slots:
     void on_pushButtonAbout_clicked();
     void on_pushButtonShortcuts_clicked();
     void on_pushButtonOptions_clicked();
-    void on_pushButtonFileInfo_clicked();
-    void on_pushButtonMIME_clicked();
-    void on_pushButtonHex_clicked();
-    void on_pushButtonStrings_clicked();
-    void on_pushButtonSignatures_clicked();
-    void on_pushButtonEntropy_clicked();
     void on_pushButtonOpenFile_clicked();
-    void on_pushButtonHash_clicked();
     void on_pushButtonDemangle_clicked();
+    void on_toolButtonRecentFiles_clicked();
 
     QString getCurrentFileName();
     void adjust();
@@ -80,5 +66,6 @@ private:
     Ui::GuiMainWindow *ui;
     XOptions g_xOptions;
     XShortcuts g_xShortcuts;
+    QMenu *g_pRecentFilesMenu;
 };
 #endif // GUIMAINWINDOW_H
