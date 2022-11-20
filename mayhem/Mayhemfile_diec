@@ -1,6 +1,6 @@
 project: die-engine
 target: diec
-duration: 300
 
 cmds:
   - cmd: /repo/build/release/diec @@
+image: ghcr.io/rnshah9/playground:die-engine

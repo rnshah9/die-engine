@@ -12,17 +12,29 @@ RUN apt-get install --quiet --assume-yes \
       qtbase5-dev \
       qtscript5-dev \
       qttools5-dev-tools
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y clang
 
 COPY . /repo
 WORKDIR /repo
 RUN chmod +x build_linux_portable.sh
 RUN ./build_linux_portable.sh
 
-RUN mkdir -p /deps
-RUN ldd /repo/build/release/diec | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
+ENV QMAKE_CXX=clang++
+ENV QMAKE_LINK=clang++
+RUN cp /repo/mayhem/lib.pro /repo/console_source/
+WORKDIR /repo/console_source/
+RUN qmake -o Makefile lib.pro
+RUN make
+
+WORKDIR /repo/mayhem
+RUN qmake -o Makefile fuzz.pro
+RUN make
+RUN cp /repo/mayhem/fuzz /fuzz_infoMessage
 
 FROM ubuntu:bionic as package
 
-COPY --from=builder /deps /deps
+RUN apt-get update --quiet
+RUN apt-get install --quiet --assume-yes \
+      qt5-default qtscript5-dev 
 COPY --from=builder /repo/build/release/diec /repo/build/release/diec
-ENV LD_LIBRARY_PATH=/deps
+COPY --from=builder /fuzz_infoMessage /fuzz_infoMessage

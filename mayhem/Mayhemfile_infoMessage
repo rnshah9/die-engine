@@ -1,0 +1,6 @@
+project: die-engine
+target: infomessage
+
+cmds:
+  - cmd: /fuzz_infoMessage
+    libfuzzer: true
