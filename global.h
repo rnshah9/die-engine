@@ -27,11 +27,11 @@
 #define X_APPLICATIONDISPLAYNAMELITE "Detect It Easy Lite"
 #define X_APPLICATIONNAME "die"
 #define X_APPLICATIONNAMELITE "diel"
-#define X_APPLICATIONVERSION "3.06"
+#define X_APPLICATIONVERSION "3.07"
 #define X_ORGANIZATIONNAME "NTInfo"
 #define X_ORGANIZATIONDOMAIN "ntinfo.biz"
 #define X_OPTIONSFILE "die.ini"
 #define X_SHORTCUTSFILE "shortcuts.ini"
 #define X_UPDATEPAGE "https://github.com/horsicq/DIE-engine/releases"
 
-#endif // _GLOBAL_H
+#endif  // _GLOBAL_H

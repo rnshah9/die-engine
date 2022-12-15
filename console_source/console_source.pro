@@ -45,10 +45,10 @@ HEADERS += \
 win32 {
     CONFIG -= embed_manifest_exe
     QMAKE_MANIFEST = windows.manifest.xml
-    VERSION = 3.06.0.0
+    VERSION = 3.07.0.0
     QMAKE_TARGET_COMPANY = NTInfo
     QMAKE_TARGET_PRODUCT = Detect It Easy
-    QMAKE_TARGET_DESCRIPTION = Detect It Easy is a program for determining types of files.
+    QMAKE_TARGET_DESCRIPTION = Detect It Easy(DiE)
     QMAKE_TARGET_COPYRIGHT = horsicq@gmail.com
 }
 

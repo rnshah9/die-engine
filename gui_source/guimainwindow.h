@@ -21,24 +21,26 @@
 #ifndef GUIMAINWINDOW_H
 #define GUIMAINWINDOW_H
 
-#include "../global.h"
-#include <QMainWindow>
 #include <QFileDialog>
+#include <QMainWindow>
+
+#include "../global.h"
 #include "dialogabout.h"
 #include "dialogoptions.h"
-#include "xoptions.h"
 #include "dialogshortcuts.h"
+#include "xoptions.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class GuiMainWindow; }
+namespace Ui {
+class GuiMainWindow;
+}
 QT_END_NAMESPACE
 
-class GuiMainWindow : public QMainWindow
-{
+class GuiMainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    GuiMainWindow(QWidget *pParent=nullptr);
+    GuiMainWindow(QWidget *pParent = nullptr);
     ~GuiMainWindow();
 
 private slots:
@@ -49,10 +51,12 @@ private slots:
     void on_pushButtonOpenFile_clicked();
     void on_pushButtonDemangle_clicked();
     void on_toolButtonRecentFiles_clicked();
+    void on_checkBoxAdvanced_toggled(bool bChecked);
 
     QString getCurrentFileName();
     void adjust();
     void adjustFile();
+    void setAdvanced(bool bState);
 
 public slots:
     void processFile(QString sFileName);
@@ -68,4 +72,4 @@ private:
     XShortcuts g_xShortcuts;
     QMenu *g_pRecentFilesMenu;
 };
-#endif // GUIMAINWINDOW_H
+#endif  // GUIMAINWINDOW_H
